@@ -1,0 +1,23 @@
+diff -up zlib-1.2.3/configure.ac.pc zlib-1.2.3/configure.ac
+--- zlib-1.2.3/configure.ac.pc	2010-06-01 10:37:31.000000000 +0200
++++ zlib-1.2.3/configure.ac	2010-06-01 10:37:31.000000000 +0200
+@@ -9,5 +9,5 @@ LT_INIT
+ 
+ AC_SUBST([HAVE_UNISTD_H], [0])
+ AC_CHECK_HEADER([unistd.h], [HAVE_UNISTD_H=1], [])
+-AC_CONFIG_FILES([Makefile minizip.pc zconf.h:zconf.in.h])
++AC_CONFIG_FILES([zlib.pc Makefile minizip.pc zconf.h:zconf.in.h])
+ AC_OUTPUT
+diff -up zlib-1.2.3/Makefile.am.pc zlib-1.2.3/Makefile.am
+--- zlib-1.2.3/Makefile.am.pc	2010-06-01 10:37:31.000000000 +0200
++++ zlib-1.2.3/Makefile.am	2010-06-01 10:40:11.000000000 +0200
+@@ -24,6 +24,9 @@ libz_la_SOURCES = \
+ 	inffast.h \
+ 	infflate.h
+ 
++libz_pkgconfigdir = $(libdir)/pkgconfig
++libz_pkgconfig_DATA = zlib.pc
++
+ # Use -version-number to match the file name used before autoconfiscation.
+ libz_la_LDFLAGS = -version-number 1:2:3
+ 
