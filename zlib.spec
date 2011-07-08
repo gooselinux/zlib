@@ -1,7 +1,7 @@
 Summary: The zlib compression and decompression library
 Name: zlib
 Version: 1.2.3
-Release: 25%{?dist}
+Release: 25.1%{?dist}
 Group: System Environment/Libraries
 Source: http://www.zlib.net/zlib-%{version}.tar.gz
 Source1: zlib.pc.in
@@ -135,6 +135,9 @@ rm -rf ${RPM_BUILD_ROOT}
 %{_libdir}/pkgconfig/minizip.pc
 
 %changelog
+* Fri Jul  8 2011 Mike Adams <shalkie@gooseproject.org> - 1.2.3-25.1
+- Rebuild pakcage for GoOSe Linux 6
+
 * Tue Jun  1 2010 Ivana Hutarova Varekova <varekova@redhat.com> - 1.2.3-25
 - Resolves: #597954
   add zlib .pc file
